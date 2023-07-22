@@ -7,7 +7,6 @@ import style from './contactForm.module.css'
 const ContactForm = ({ onAddContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const [userDataList, setUserDataList] = useState([]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -20,12 +19,6 @@ const ContactForm = ({ onAddContact }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-   const newUserData = {
-     name: name,
-     number: number,
-   };
-
-   setUserDataList(prevUserDataList => [...prevUserDataList, newUserData]);
 
     onAddContact(name, number);
 
